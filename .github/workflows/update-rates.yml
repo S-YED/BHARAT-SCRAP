@@ -1,0 +1,35 @@
+name: Daily Scrap Rate Update
+
+on:
+  schedule:
+    # 2:30 AM UTC = 8:00 AM IST — Mon through Sat (shop is closed Sunday)
+    - cron: '30 2 * * 1-6'
+  workflow_dispatch:
+    # Lets you trigger manually from the GitHub Actions tab anytime
+
+jobs:
+  update-rates:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed to commit the updated JSON back
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch latest scrap rates from MetalMandi
+        run: node scripts/fetch-rates.mjs
+
+      - name: Commit updated rates
+        run: |
+          git config user.name  "Bharat Scrap Rate Bot"
+          git config user.email "rates-bot@bharatscrap.local"
+          git add frontend/src/data/rates-base.json
+          # Only commit if the file actually changed
+          git diff --staged --quiet || git commit -m "chore: update scrap rates for $(date -u +%Y-%m-%d)"
+          git push

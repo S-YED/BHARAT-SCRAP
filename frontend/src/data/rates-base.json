@@ -1,0 +1,25 @@
+{
+  "lastUpdated": "2026-05-17",
+  "source": "MetalMandi (Hyderabad region, adjusted -₹8/kg for Kalaburagi)",
+  "metals": {
+    "copper": 612,
+    "iron": 28,
+    "castIron": 22,
+    "stainlessSteel": 70,
+    "aluminium": 142,
+    "brass": 295,
+    "lead": 152
+  },
+  "plastics": {
+    "pet": 14,
+    "hdpe": 27,
+    "ldpe": 17,
+    "mixed": 8
+  },
+  "paper": {
+    "cardboard": 12,
+    "officePaper": 16,
+    "newspaper": 14,
+    "magazine": 10
+  }
+}

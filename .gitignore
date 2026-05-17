@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Dev tools
+.agents/
+.claude/
+.gstack/
+
+# Stitch design prototypes (not part of production)
+stitch_bharat_scrap_mobile_ui/
+
+# Duplicate / broken folder name
+dBHARAT SCRAPfrontend/
+
+# Local dev notes (not for production repo)
+Problems.md
+todo_info.md
+Product_info.m
+Price_info.md
+CLAUDE.md
+skills-lock.json
+
+# Firebase config (using GitHub Pages instead)
+.firebaserc
+firebase.json
+
+# Vercel config (using GitHub Pages instead)
+vercel.json
+
+# Root lockfile (not needed — frontend has its own)
+/package-lock.json
+
+# Unused raw video frames (only shop-*.jpg are used)
+frontend/public/shop/frame_*.jpg
+
+# Environment variables
+.env
+.env.local
+.env.production
